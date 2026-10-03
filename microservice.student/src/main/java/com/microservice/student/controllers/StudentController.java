@@ -16,19 +16,20 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @PostMapping("/create")
+    @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveStudent(@RequestBody Student student){
+    public void addStudent(@RequestBody Student student){
         studentService.save(student);
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<?> findAllStudent(){
+    @GetMapping()
+    public ResponseEntity<?> getAllStudents(){
         return ResponseEntity.ok(studentService.findAll());
     }
 
-    @GetMapping("/search/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getStudentById(@PathVariable Long id){
+
         return ResponseEntity.ok(studentService.findById(id));
     }
 }
