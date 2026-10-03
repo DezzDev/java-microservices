@@ -24,6 +24,7 @@
     <module>microservice.gateway</module>
     <module>microservice.eureka</module>
     <module>microservice.config</module>
+    <module>microservice.student</module>
   </modules>
 
 
@@ -51,7 +52,6 @@
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
-          <version>4.0.0</version>
         </plugin>
       </plugins>
     </pluginManagement>
