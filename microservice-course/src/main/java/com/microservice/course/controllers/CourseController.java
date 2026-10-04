@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/Course")
+@RequestMapping("/api/course")
 public class CourseController {
 
     private final ICourseService courseService;
@@ -34,6 +34,9 @@ public class CourseController {
         courseService.save(course);
     }
 
-
+    @GetMapping("/search-student/{courseId}")
+    public ResponseEntity<?> findStudentsByCourseId(@PathVariable Long courseId){
+        return ResponseEntity.ok(courseService.findStudentsByCourseId(courseId));
+    }
 
 }

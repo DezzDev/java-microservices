@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/student")
 public class StudentController {
 
     private  final IStudentService studentService;
@@ -29,7 +29,12 @@ public class StudentController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getStudentById(@PathVariable Long id){
-
         return ResponseEntity.ok(studentService.findById(id));
+    }
+
+    @GetMapping("search-by-course/{idCourse}")
+    public ResponseEntity<?> getByIdCourse(@PathVariable Long idCourse){
+        return ResponseEntity.ok(studentService.findByIdCourse(idCourse));
+
     }
 }
