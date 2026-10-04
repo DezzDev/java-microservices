@@ -9,7 +9,7 @@ import java.util.List;
 
 // este client es para poder hacerle peticiones al microservice student
 // nombre del microservicio que sera consultado
-@FeignClient(name= "msvc-student",url = "localhost:8090/api/student")
+@FeignClient(name= "msvc-student",url = "localhost:8080/api/student")
 public interface StudentClient {
     @GetMapping("search-by-course/{idCourse}")
     List<StudentDto> getAllStudentsByCourse(@PathVariable Long idCourse );
